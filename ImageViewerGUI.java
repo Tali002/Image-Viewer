@@ -118,18 +118,8 @@ public class ImageViewerGUI extends JFrame implements ActionListener {
         showResizeButton.setForeground(Color.WHITE);
         showResizeButton.setFocusPainted(false);
         showResizeButton.setBounds(250, 180, 170, 30);
-        showResizeButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                try {
-                    int newWidth = Integer.parseInt(widthTextField.getText());
-                    int newHeight = Integer.parseInt(heightTextField.getText());
-                    showResizeImage(newWidth, newHeight);
-                } catch (NumberFormatException ex) {
-                    JOptionPane.showMessageDialog(null, "Please enter valid numbers.");
-                }
-            }
-        });
+        showResizeButton.addActionListener(this);
+
         resizePanel.add(showResizeButton);
 
         backButton = new JButton("Back");
